@@ -22,8 +22,8 @@
 import os
 import version
 
-NAME = 'ABC iView'
-ADDON_ID = 'plugin.video.abc_iview'
+NAME = 'ABC4kids'
+ADDON_ID = 'plugin.video.abc4kids'
 VERSION = version.VERSION
 
 GITHUB_API_URL = 'https://api.github.com/repos/andybotting/xbmc-addon-abc-iview'
