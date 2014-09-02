@@ -38,7 +38,7 @@ if __name__ == "__main__" :
    params = utils.get_url(params_str)
 
    if (len(params) == 0):
-      categories.make_category_list()
+      series.make_series_list(params_str + '&category=abc4kids')
    elif params.has_key("play"):
       play.play(params_str)
    elif params.has_key("series"):
