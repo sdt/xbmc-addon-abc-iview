@@ -26,9 +26,9 @@ NAME = 'ABC4kids'
 ADDON_ID = 'plugin.video.abc4kids'
 VERSION = version.VERSION
 
-GITHUB_API_URL = 'https://api.github.com/repos/andybotting/xbmc-addon-abc-iview'
+GITHUB_API_URL = 'https://api.github.com/repos/sdt/xbmc-addon-abc-iview'
 ISSUE_API_URL = GITHUB_API_URL + '/issues'
-ISSUE_API_AUTH = 'eGJtY2JvdDo1OTQxNTJjMTBhZGFiNGRlN2M0YWZkZDYwZGQ5NDFkNWY4YmIzOGFj'
+ISSUE_API_AUTH = 'f14fa3e56cded80f1e9b8ff5e2a479981e49b854'
 GIST_API_URL = 'https://api.github.com/gists'
 
 api_version = 383
