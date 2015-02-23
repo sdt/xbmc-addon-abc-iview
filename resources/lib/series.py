@@ -43,7 +43,7 @@ def make_series_list():
 
         ok = True
         for s in series_list:
-            url = "%s?%s" % (sys.argv[0], utils.make_url({'series': s.title}))
+            url = "%s?%s" % (sys.argv[0], utils.make_url({'series': s.title, 'category': '0-z'}))
 
             thumbnail = s.get_thumbnail()
             listitem = xbmcgui.ListItem(s.get_list_title(), iconImage=thumbnail, thumbnailImage=thumbnail)
