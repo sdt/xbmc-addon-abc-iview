@@ -27,17 +27,23 @@ import comm
 import utils
 import xbmc, xbmcgui, xbmcplugin
 
-def make_series_list(url):
-    params = utils.get_url(url)
+def make_series_list():
+
+    # Only these titles from abc3 are included
+    abc3_titles = [
+        'Tashi',
+        'The Day My Butt Went Psycho!',
+    ]
 
     try:
-        category = params["category"]
-        series_list = comm.get_programme_from_feed(category)
+        series_list = comm.get_programme_from_feed('abc4kids')
+        series_list += [ s for s in comm.get_programme_from_feed('abc3')
+                           if s.title in abc3_titles ]
         series_list.sort()
 
         ok = True
         for s in series_list:
-            url = "%s?%s" % (sys.argv[0], utils.make_url({'series': s.title, 'category': category}))
+            url = "%s?%s" % (sys.argv[0], utils.make_url({'series': s.title}))
 
             thumbnail = s.get_thumbnail()
             listitem = xbmcgui.ListItem(s.get_list_title(), iconImage=thumbnail, thumbnailImage=thumbnail)
