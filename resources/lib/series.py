@@ -31,6 +31,8 @@ def make_series_list():
 
     # Only these titles from abc3 are included
     abc3_titles = [
+        'Grojband',
+        'Pearlie',
         'Tashi',
         'The Day My Butt Went Psycho!',
     ]
