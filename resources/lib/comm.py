@@ -105,7 +105,7 @@ def get_categories(iview_config):
     return categories
 
 def get_feed(keyword):
-    utils.log("Fetching feed")
+    utils.log("Fetching feed %s" % keyword)
     url = config.feed_url + '?keyword=' + keyword
     feed = cache.cacheFunction(fetch_protected_url, url)
     return feed
@@ -114,6 +114,8 @@ def get_programme_from_feed(keyword):
     utils.log("Getting programme from feed (%s)" % keyword)
     feed = get_feed(keyword)
     shows = parse.parse_programme_from_feed(feed)
+    for s in shows:
+        s.category = keyword
     return shows
 
 def get_series_from_feed(series, category='0-z'):
