@@ -25,17 +25,18 @@ import urllib2
 import urllib
 import comm
 import utils
-import xbmc, xbmcgui, xbmcplugin
+import xbmc, xbmcaddon, xbmcgui, xbmcplugin
 
 def make_series_list():
 
-    # Only these titles from abc3 are included
-    abc3_titles = [
-        'Grojband',
-        'Pearlie',
-        'Tashi',
-        'The Day My Butt Went Psycho!',
-    ]
+    addon_path = xbmcaddon.Addon().getAddonInfo('path')
+    abc3_file = os.path.join(addon_path , "abc3.txt")
+    abc3_titles = []
+    try:
+        with open(abc3_file) as f:
+            abc3_titles = f.read().splitlines()
+    except:
+        pass
 
     try:
         series_list = comm.get_programme_from_feed('abc4kids')
